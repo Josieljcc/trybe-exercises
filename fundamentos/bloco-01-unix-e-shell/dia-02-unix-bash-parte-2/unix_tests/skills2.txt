@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+Comunicacao
+Proatividade
+Javascript
+Html
+Css

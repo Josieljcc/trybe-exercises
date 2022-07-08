@@ -1,0 +1,3 @@
+testando buscas com o terminal em arquivos de texto
+brasil só para aparecer na busca por br :)
+outra frase com br para aparecer na busca ;)
