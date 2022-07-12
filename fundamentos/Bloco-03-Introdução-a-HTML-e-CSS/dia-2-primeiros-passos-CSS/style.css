@@ -1,0 +1,30 @@
+#amarelo{
+    background-color: yellow;
+}
+#vermelho{
+    background-color: red;
+}
+#marrom{
+    background-color: brown;
+}
+body{
+    font-size: 16px;
+}
+h1{
+    font-family: sans-serif;
+    font-size: 65px;
+    color: orange;
+    text-align: center;
+    text-decoration: wavy;
+}
+ul {
+    background-color: aquamarine;
+}
+p{
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.colorBlue{
+    background-color: aqua;
+}
