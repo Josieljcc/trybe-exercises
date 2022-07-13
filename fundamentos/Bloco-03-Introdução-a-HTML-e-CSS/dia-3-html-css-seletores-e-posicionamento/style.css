@@ -1,0 +1,22 @@
+div:first-of-type {
+  background-color: blue;
+}
+div:nth-of-type(2) {
+  background-color: green;
+}
+div:nth-of-type(3) {
+  background-color: orange;
+  height: 200px;
+}
+div:nth-of-type(4) {
+  background-color: rgb(48, 32, 2);
+}
+div:nth-of-type(5) {
+  background-color: rgb(255, 221, 159);
+}
+div:nth-of-type(odd) h3 {
+  font-style: italic;
+}
+div:hover {
+  border: solid 1px black;
+}
