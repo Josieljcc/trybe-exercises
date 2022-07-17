@@ -110,14 +110,33 @@ article {
   color: rgb(26, 24, 24);
 }
 
-article h1 {
+h1 {
+  text-align: center;
   margin-bottom: 1rem;
+  color: rgb(58, 73, 64);
 }
 
 article img {
   width: 25rem;
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* table */
+
+aside {
+  position: absolute;
+  top: 5rem;
+  left: 55rem;
+  z-index: -2;
+}
+
+aside table {
+  font-size: 0.7rem;
+  border: rgb(58, 73, 64) solid 1px;
+}
+
+aside table tr:first-of-type {
+  font-weight: bold;
 }
 
 /* Facts */
@@ -144,10 +163,33 @@ article img {
 }
 
 .fact-text {
-  width: 50%;
+  width: 45%;
   text-align: justify;
 }
 .fact-text h4 {
   font-size: 1.5rem;
   margin-bottom: 0.3rem;
+}
+
+/* Footer */
+
+footer {
+  background-color: #0c99ba;
+  color: aliceblue;
+}
+
+.footer-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  width: 70%;
+  min-height: 10rem;
+}
+footer li {
+  list-style-type: none;
+}
+footer img {
+  width: 7rem;
 }
