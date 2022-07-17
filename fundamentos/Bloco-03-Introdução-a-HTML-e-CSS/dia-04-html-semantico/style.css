@@ -1,0 +1,195 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #cedcba;
+  color: rgb(58, 73, 64);
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: rgb(0, 82, 49);
+  background: linear-gradient(90deg, rgba(0, 82, 49, 1) 0%, #cedcba 100%);
+}
+
+/* Header */
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 4rem;
+  align-items: center;
+  background-color: #0c99ba;
+}
+
+header .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.menu a {
+  margin-left: 1rem;
+  color: aliceblue;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: rgb(34, 56, 56);
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: aliceblue;
+}
+
+/* Main Page */
+main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  width: 70%;
+  margin: auto;
+}
+
+article {
+  margin-top: 5rem;
+}
+
+.general-information {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 25rem;
+}
+
+.general-information .general-text {
+  width: 40%;
+  text-align: justify;
+}
+
+.general-text h2 {
+  margin-bottom: 0.4rem;
+}
+
+.image {
+  z-index: -1;
+  position: relative;
+}
+
+.image h3 {
+  position: absolute;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.image p {
+  position: absolute;
+  margin-top: -3rem;
+  margin-left: 70%;
+  text-align: right;
+  color: rgb(26, 24, 24);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: rgb(58, 73, 64);
+}
+
+article img {
+  width: 25rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* table */
+
+aside {
+  position: absolute;
+  top: 5rem;
+  left: 55rem;
+  z-index: -2;
+}
+
+aside table {
+  font-size: 0.7rem;
+  border: rgb(58, 73, 64) solid 1px;
+}
+
+aside table tr:first-of-type {
+  font-weight: bold;
+}
+
+/* Facts */
+
+.fact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 25rem;
+}
+
+.facts {
+  text-align: center;
+}
+
+.facts h3 {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+  font-size: 1.8rem;
+}
+
+.image .white-image-credit {
+  color: aliceblue;
+}
+
+.fact-text {
+  width: 45%;
+  text-align: justify;
+}
+.fact-text h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Footer */
+
+footer {
+  background-color: #0c99ba;
+  color: aliceblue;
+}
+
+.footer-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  width: 70%;
+  min-height: 10rem;
+}
+footer li {
+  list-style-type: none;
+}
+footer img {
+  width: 7rem;
+}
