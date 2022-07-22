@@ -74,11 +74,17 @@ function showHolidays() {
 // Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira".
 //  Sua função deve receber como parâmetro a string "Sexta-feira".
 // criado na linha 6 - 7
+
+// 🚀 Exercício 5:
+// Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira.
+// Adicione ao botão "Sexta-feira" um evento de "click" e modifique o texto a ser exibido nos
+// dias que são sextas-feiras.
 const buttonFriday = document.querySelector("button").nextSibling;
 buttonFriday.addEventListener("click", sextou);
+const days = document.querySelectorAll(".day");
+
 function sextou() {
   buttonFriday.classList.toggle("highlight-friday");
-  const days = document.querySelectorAll(".day");
   for (let i = 0; i < days.length; i++) {
     const day = days[i];
     if (
@@ -97,4 +103,22 @@ function sextou() {
       }
     }
   }
+}
+
+// 🚀 Exercício 6:
+// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse
+// em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do
+// mouse sair do dia, o texto deve retornar ao tamanho original.
+for (const day of days) {
+  day.addEventListener("mouseover", aplyZoomInDays);
+  day.addEventListener("mouseleave", removeZoomInDays);
+}
+function aplyZoomInDays(event) {
+  event.target.style.fontWeight = "bold";
+  event.target.style.fontSize = "25px";
+}
+
+function removeZoomInDays(event) {
+  event.target.style.fontWeight = "normal";
+  event.target.style.fontSize = "20px";
 }
