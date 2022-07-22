@@ -122,3 +122,20 @@ function removeZoomInDays(event) {
   event.target.style.fontWeight = "normal";
   event.target.style.fontSize = "20px";
 }
+
+// 🚀 Exercício 7:
+// Implemente uma função que adicione uma tarefa personalizada ao calendário.
+// A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar")
+// e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+const addButton = document.querySelector("#btn-add");
+addButton.addEventListener("click", addTask);
+const taskList = document.querySelector(".my-tasks");
+const imput = document.querySelector("#task-input");
+function addTask(event) {
+  let taskElement = document.createElement("span");
+  taskElement.innerText = imput.value;
+  taskElement.style.display = "block";
+  imput.value = "";
+  console.log(taskElement);
+  taskList.appendChild(taskElement);
+}
