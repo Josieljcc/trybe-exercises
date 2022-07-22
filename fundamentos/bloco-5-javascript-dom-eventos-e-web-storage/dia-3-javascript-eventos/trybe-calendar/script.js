@@ -127,6 +127,160 @@ function removeZoomInDays(event) {
 // Implemente uma função que adicione uma tarefa personalizada ao calendário.
 // A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar")
 // e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+
+function pickColorRandon() {
+  const colors = [
+    "AliceBlue",
+    "AntiqueWhite",
+    "Aqua",
+    "Aquamarine",
+    "Azure",
+    "Beige",
+    "Bisque",
+    "Black",
+    "BlanchedAlmond",
+    "Blue",
+    "BlueViolet",
+    "Brown",
+    "BurlyWood",
+    "CadetBlue",
+    "Chartreuse",
+    "Chocolate",
+    "Coral",
+    "CornflowerBlue",
+    "Cornsilk",
+    "Crimson",
+    "Cyan",
+    "DarkBlue",
+    "DarkCyan",
+    "DarkGoldenRod",
+    "DarkGray",
+    "DarkGrey",
+    "DarkGreen",
+    "DarkKhaki",
+    "DarkMagenta",
+    "DarkOliveGreen",
+    "DarkOrange",
+    "DarkOrchid",
+    "DarkRed",
+    "DarkSalmon",
+    "DarkSeaGreen",
+    "DarkSlateBlue",
+    "DarkSlateGray",
+    "DarkSlateGrey",
+    "DarkTurquoise",
+    "DarkViolet",
+    "DeepPink",
+    "DeepSkyBlue",
+    "DimGray",
+    "DimGrey",
+    "DodgerBlue",
+    "FireBrick",
+    "FloralWhite",
+    "ForestGreen",
+    "Fuchsia",
+    "Gainsboro",
+    "GhostWhite",
+    "Gold",
+    "GoldenRod",
+    "Gray",
+    "Grey",
+    "Green",
+    "GreenYellow",
+    "HoneyDew",
+    "HotPink",
+    "IndianRed",
+    "Indigo",
+    "Ivory",
+    "Khaki",
+    "Lavender",
+    "LavenderBlush",
+    "LawnGreen",
+    "LemonChiffon",
+    "LightBlue",
+    "LightCoral",
+    "LightCyan",
+    "LightGoldenRodYellow",
+    "LightGray",
+    "LightGrey",
+    "LightGreen",
+    "LightPink",
+    "LightSalmon",
+    "LightSeaGreen",
+    "LightSkyBlue",
+    "LightSlateGray",
+    "LightSlateGrey",
+    "LightSteelBlue",
+    "LightYellow",
+    "Lime",
+    "LimeGreen",
+    "Linen",
+    "Magenta",
+    "Maroon",
+    "MediumAquaMarine",
+    "MediumBlue",
+    "MediumOrchid",
+    "MediumPurple",
+    "MediumSeaGreen",
+    "MediumSlateBlue",
+    "MediumSpringGreen",
+    "MediumTurquoise",
+    "MediumVioletRed",
+    "MidnightBlue",
+    "MintCream",
+    "MistyRose",
+    "Moccasin",
+    "NavajoWhite",
+    "Navy",
+    "OldLace",
+    "Olive",
+    "OliveDrab",
+    "Orange",
+    "OrangeRed",
+    "Orchid",
+    "PaleGoldenRod",
+    "PaleGreen",
+    "PaleTurquoise",
+    "PaleVioletRed",
+    "PapayaWhip",
+    "PeachPuff",
+    "Peru",
+    "Pink",
+    "Plum",
+    "PowderBlue",
+    "Purple",
+    "RebeccaPurple",
+    "Red",
+    "RosyBrown",
+    "RoyalBlue",
+    "SaddleBrown",
+    "Salmon",
+    "SandyBrown",
+    "SeaGreen",
+    "SeaShell",
+    "Sienna",
+    "Silver",
+    "SkyBlue",
+    "SlateBlue",
+    "SlateGray",
+    "SlateGrey",
+    "Snow",
+    "SpringGreen",
+    "SteelBlue",
+    "Tan",
+    "Teal",
+    "Thistle",
+    "Tomato",
+    "Turquoise",
+    "Violet",
+    "Wheat",
+    "White",
+    "WhiteSmoke",
+    "Yellow",
+    "YellowGreen",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
 const addButton = document.querySelector("#btn-add");
 addButton.addEventListener("click", addTask);
 const taskList = document.querySelector(".my-tasks");
@@ -134,8 +288,22 @@ const imput = document.querySelector("#task-input");
 function addTask(event) {
   let taskElement = document.createElement("span");
   taskElement.innerText = imput.value;
-  taskElement.style.display = "block";
   imput.value = "";
   console.log(taskElement);
   taskList.appendChild(taskElement);
+  console.log();
+  createColorSubtitle(pickColorRandon());
+}
+
+// 🚀 Exercício 8:
+// Implemente uma função que adicione uma legenda com cor para a tarefa.
+// Copiar
+// * Essa função deverá receber como parâmetro uma string ('cor') e
+// criar dinamicamente um elemento de tag `<div>` com a classe `task`.
+
+function createColorSubtitle(cor) {
+  let colorSubtitleElement = document.createElement("div");
+  colorSubtitleElement.className = "task";
+  colorSubtitleElement.style.background = cor;
+  taskList.append(colorSubtitleElement);
 }
