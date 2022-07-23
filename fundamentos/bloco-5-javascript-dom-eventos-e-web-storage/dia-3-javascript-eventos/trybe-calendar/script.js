@@ -1,0 +1,334 @@
+createDaysOfTheWeek();
+createDays();
+createButton("Feriados");
+document.querySelector("button").id = "btn-holiday";
+createButton("Sexta-Feira");
+document.querySelector("button").nextSibling.id = "btn-friday";
+
+function createDaysOfTheWeek() {
+  const weekDays = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+  ];
+  const weekDaysList = document.querySelector(".week-days");
+  for (let index = 0; index < weekDays.length; index += 1) {
+    const days = weekDays[index];
+    const dayListItem = document.createElement("li");
+    dayListItem.innerHTML = days;
+
+    weekDaysList.appendChild(dayListItem);
+  }
+}
+// 🚀 Exercício 1:
+// Crie um calendário dinamicamente.
+function createDays() {
+  const decemberDaysList = [
+    29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+  ];
+  const daysList = document.querySelector("#days");
+  for (let i = 0; i < decemberDaysList.length; i++) {
+    const day = decemberDaysList[i];
+    const dayListElement = document.createElement("li");
+    dayListElement.className = "day";
+    dayListElement.innerText = day;
+    if (day == 24 || day == 25 || day == 31) {
+      dayListElement.className += " holiday";
+    }
+    if (day == 4 || day == 11 || day == 18 || day == 25) {
+      dayListElement.className += " friday";
+    }
+    daysList.appendChild(dayListElement);
+  }
+}
+// 🚀 Exercício 2:
+// Implemente uma função que crie dinamicamente um botão com o nome "Feriados".
+function createButton(string) {
+  const buttonsContainer = document.querySelector(".buttons-container");
+  const buttonElement = document.createElement("button");
+  buttonElement.innerText = string;
+  buttonsContainer.appendChild(buttonElement);
+}
+
+// 🚀 Exercício 3:
+// Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday".
+const buttonHoliday = document.querySelector("#btn-holiday");
+
+buttonHoliday.addEventListener("click", showHolidays);
+
+function showHolidays() {
+  const holidays = document.querySelectorAll(".holiday");
+  for (let i = 0; i < holidays.length; i++) {
+    const holiday = holidays[i];
+    holiday.classList.toggle("highlight");
+    buttonHoliday.classList.toggle("highlight");
+  }
+}
+// 🚀 Exercício 4:
+// Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira".
+//  Sua função deve receber como parâmetro a string "Sexta-feira".
+// criado na linha 6 - 7
+
+// 🚀 Exercício 5:
+// Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira.
+// Adicione ao botão "Sexta-feira" um evento de "click" e modifique o texto a ser exibido nos
+// dias que são sextas-feiras.
+const buttonFriday = document.querySelector("button").nextSibling;
+buttonFriday.addEventListener("click", sextou);
+const days = document.querySelectorAll(".day");
+
+function sextou() {
+  buttonFriday.classList.toggle("highlight-friday");
+  for (let i = 0; i < days.length; i++) {
+    const day = days[i];
+    if (
+      day.innerText == 4 ||
+      day.innerText == 11 ||
+      day.innerText == 18 ||
+      day.innerText == 25 ||
+      day.innerText == "Sextou! 0/"
+    ) {
+      if (buttonFriday.className.includes("highlight-friday")) {
+        day.innerText = "Sextou! 0/";
+        day.classList.toggle("highlight-friday");
+      } else {
+        day.innerText = i - 1;
+        day.classList.toggle("highlight-friday");
+      }
+    }
+  }
+}
+
+// 🚀 Exercício 6:
+// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse
+// em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do
+// mouse sair do dia, o texto deve retornar ao tamanho original.
+for (const day of days) {
+  day.addEventListener("mouseover", aplyZoomInDays);
+  day.addEventListener("mouseleave", removeZoomInDays);
+  day.addEventListener("click", pickTaskColor);
+}
+function aplyZoomInDays(event) {
+  event.target.style.fontWeight = "bold";
+  event.target.style.fontSize = "25px";
+}
+
+function removeZoomInDays(event) {
+  event.target.style.fontWeight = "normal";
+  event.target.style.fontSize = "20px";
+}
+
+// 🚀 Exercício 7:
+// Implemente uma função que adicione uma tarefa personalizada ao calendário.
+// A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar")
+// e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+
+function pickColorRandon() {
+  const colors = [
+    "AliceBlue",
+    "AntiqueWhite",
+    "Aqua",
+    "Aquamarine",
+    "Azure",
+    "Beige",
+    "Bisque",
+    "Black",
+    "BlanchedAlmond",
+    "Blue",
+    "BlueViolet",
+    "Brown",
+    "BurlyWood",
+    "CadetBlue",
+    "Chartreuse",
+    "Chocolate",
+    "Coral",
+    "CornflowerBlue",
+    "Cornsilk",
+    "Crimson",
+    "Cyan",
+    "DarkBlue",
+    "DarkCyan",
+    "DarkGoldenRod",
+    "DarkGray",
+    "DarkGrey",
+    "DarkGreen",
+    "DarkKhaki",
+    "DarkMagenta",
+    "DarkOliveGreen",
+    "DarkOrange",
+    "DarkOrchid",
+    "DarkRed",
+    "DarkSalmon",
+    "DarkSeaGreen",
+    "DarkSlateBlue",
+    "DarkSlateGray",
+    "DarkSlateGrey",
+    "DarkTurquoise",
+    "DarkViolet",
+    "DeepPink",
+    "DeepSkyBlue",
+    "DimGray",
+    "DimGrey",
+    "DodgerBlue",
+    "FireBrick",
+    "FloralWhite",
+    "ForestGreen",
+    "Fuchsia",
+    "Gainsboro",
+    "GhostWhite",
+    "Gold",
+    "GoldenRod",
+    "Gray",
+    "Grey",
+    "Green",
+    "GreenYellow",
+    "HoneyDew",
+    "HotPink",
+    "IndianRed",
+    "Indigo",
+    "Ivory",
+    "Khaki",
+    "Lavender",
+    "LavenderBlush",
+    "LawnGreen",
+    "LemonChiffon",
+    "LightBlue",
+    "LightCoral",
+    "LightCyan",
+    "LightGoldenRodYellow",
+    "LightGray",
+    "LightGrey",
+    "LightGreen",
+    "LightPink",
+    "LightSalmon",
+    "LightSeaGreen",
+    "LightSkyBlue",
+    "LightSlateGray",
+    "LightSlateGrey",
+    "LightSteelBlue",
+    "LightYellow",
+    "Lime",
+    "LimeGreen",
+    "Linen",
+    "Magenta",
+    "Maroon",
+    "MediumAquaMarine",
+    "MediumBlue",
+    "MediumOrchid",
+    "MediumPurple",
+    "MediumSeaGreen",
+    "MediumSlateBlue",
+    "MediumSpringGreen",
+    "MediumTurquoise",
+    "MediumVioletRed",
+    "MidnightBlue",
+    "MintCream",
+    "MistyRose",
+    "Moccasin",
+    "NavajoWhite",
+    "Navy",
+    "OldLace",
+    "Olive",
+    "OliveDrab",
+    "Orange",
+    "OrangeRed",
+    "Orchid",
+    "PaleGoldenRod",
+    "PaleGreen",
+    "PaleTurquoise",
+    "PaleVioletRed",
+    "PapayaWhip",
+    "PeachPuff",
+    "Peru",
+    "Pink",
+    "Plum",
+    "PowderBlue",
+    "Purple",
+    "RebeccaPurple",
+    "Red",
+    "RosyBrown",
+    "RoyalBlue",
+    "SaddleBrown",
+    "Salmon",
+    "SandyBrown",
+    "SeaGreen",
+    "SeaShell",
+    "Sienna",
+    "Silver",
+    "SkyBlue",
+    "SlateBlue",
+    "SlateGray",
+    "SlateGrey",
+    "Snow",
+    "SpringGreen",
+    "SteelBlue",
+    "Tan",
+    "Teal",
+    "Thistle",
+    "Tomato",
+    "Turquoise",
+    "Violet",
+    "Wheat",
+    "White",
+    "WhiteSmoke",
+    "Yellow",
+    "YellowGreen",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+const addButton = document.querySelector("#btn-add");
+addButton.addEventListener("click", addTask);
+const taskList = document.querySelector(".my-tasks");
+const imput = document.querySelector("#task-input");
+function addTask(event) {
+  let taskElement = document.createElement("span");
+  taskElement.innerText = imput.value;
+  imput.value = "";
+  taskList.appendChild(taskElement);
+  createColorSubtitle(pickColorRandon());
+  const allTasks = document.querySelectorAll("span");
+  console.log(allTasks);
+  for (let i = 0; i < allTasks.length; i++) {
+    const task = allTasks[i];
+    task.nextElementSibling.addEventListener("click", pickTaskColor);
+  }
+}
+
+// 🚀 Exercício 8:
+// Implemente uma função que adicione uma legenda com cor para a tarefa.
+// Copiar
+// * Essa função deverá receber como parâmetro uma string ('cor') e
+// criar dinamicamente um elemento de tag `<div>` com a classe `task`.
+
+function createColorSubtitle(cor) {
+  let colorSubtitleElement = document.createElement("div");
+  colorSubtitleElement.className = "task";
+  colorSubtitleElement.style.background = cor;
+  taskList.append(colorSubtitleElement);
+}
+
+// 🚀 Exercício 10:
+// Implemente uma função que atribua a cor da tarefa ao dia do calendário.
+// Adicione um evento que, ao clicar em um dia do mês no calendário, atribua
+// a esse dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração
+// inicial rgb(119,119,119)
+var taskColor;
+function pickTaskColor(event) {
+  if (event.target.classList == "task") {
+    taskColor = event.target.style.background;
+    console.log(taskColor);
+  } else {
+    console.log(taskColor, "09");
+    if (event.target.style.color == taskColor) {
+      event.target.style.color = "rgb(119,119,119)";
+    } else {
+      event.target.style.color = taskColor;
+    }
+  }
+}
