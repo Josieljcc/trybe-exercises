@@ -69,7 +69,6 @@ function showHolidays() {
     buttonHoliday.classList.toggle("highlight");
   }
 }
-
 // 🚀 Exercício 4:
 // Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira".
 //  Sua função deve receber como parâmetro a string "Sexta-feira".
@@ -112,6 +111,7 @@ function sextou() {
 for (const day of days) {
   day.addEventListener("mouseover", aplyZoomInDays);
   day.addEventListener("mouseleave", removeZoomInDays);
+  day.addEventListener("click", pickTaskColor);
 }
 function aplyZoomInDays(event) {
   event.target.style.fontWeight = "bold";
@@ -289,10 +289,14 @@ function addTask(event) {
   let taskElement = document.createElement("span");
   taskElement.innerText = imput.value;
   imput.value = "";
-  console.log(taskElement);
   taskList.appendChild(taskElement);
-  console.log();
   createColorSubtitle(pickColorRandon());
+  const allTasks = document.querySelectorAll("span");
+  console.log(allTasks);
+  for (let i = 0; i < allTasks.length; i++) {
+    const task = allTasks[i];
+    task.nextElementSibling.addEventListener("click", pickTaskColor);
+  }
 }
 
 // 🚀 Exercício 8:
@@ -306,4 +310,25 @@ function createColorSubtitle(cor) {
   colorSubtitleElement.className = "task";
   colorSubtitleElement.style.background = cor;
   taskList.append(colorSubtitleElement);
+}
+
+// 🚀 Exercício 10:
+// Implemente uma função que atribua a cor da tarefa ao dia do calendário.
+// Adicione um evento que, ao clicar em um dia do mês no calendário, atribua
+// a esse dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração
+// inicial rgb(119,119,119)
+var taskColor;
+function pickTaskColor(event) {
+  if (event.target.classList == "task") {
+    taskColor = event.target.style.background;
+    console.log(taskColor);
+  } else {
+    console.log(taskColor, "09");
+    if (event.target.style.color == taskColor) {
+      event.target.style.color = "rgb(119,119,119)";
+    } else {
+      event.target.style.color = taskColor;
+    }
+  }
 }
