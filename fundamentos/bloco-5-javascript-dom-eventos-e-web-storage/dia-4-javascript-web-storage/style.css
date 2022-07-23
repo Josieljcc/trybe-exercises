@@ -1,0 +1,138 @@
+:root {
+  --main-font: "Poppins", sans-serif;
+  --color-white: #ffff;
+  --color-black: rgb(31, 33, 48);
+  --line-height: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#page-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 4rem;
+  align-items: center;
+  background-color: #0c99ba;
+}
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.menu a {
+  margin-left: 1rem;
+  color: aliceblue;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: rgb(34, 56, 56);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: rgb(31, 33, 48);
+}
+
+.logo span {
+  font-size: medium;
+  color: aliceblue;
+}
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--main-font);
+}
+body p {
+  line-height: var(--line-height);
+}
+main {
+  margin-top: 5rem;
+}
+
+aside {
+  display: flex;
+  top: 6rem;
+  flex-direction: column;
+  float: left;
+  position: fixed;
+  height: 100%;
+  margin-left: 5rem;
+  width: 2rem;
+}
+
+.aside-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  height: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-white);
+  border: #0c99ba solid 1px;
+  cursor: pointer;
+}
+
+.aside-menu-item:nth-of-type(3) {
+  color: var(--color-black);
+}
+
+#ball {
+  background-color: var(--color-black);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+.articles-container {
+  width: 70%;
+  margin: auto;
+  text-align: justify;
+}
+
+.article-text {
+  text-indent: 2rem;
+}
+
+#second-article {
+  margin-top: 5rem;
+}
+
+#third-article {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+footer {
+  background-color: #0c99ba;
+  color: aliceblue;
+}
+
+.footer-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  width: 70%;
+  min-height: 10rem;
+}
