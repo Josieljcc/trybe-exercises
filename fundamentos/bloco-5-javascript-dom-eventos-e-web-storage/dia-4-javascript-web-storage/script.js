@@ -1,8 +1,20 @@
 const allButtons = document.querySelectorAll(".aside-menu-item");
 const fontButton = allButtons[0];
 const darkModeButton = allButtons[1];
-const lineheightUp = allButtons[2];
-const lineheightDown = allButtons[3];
+const lineheightDown = allButtons[2];
+const lineheightUp = allButtons[3];
+
+//Inicialização
+function initialRenderization() {
+  const mainFont = localStorage.getItem("mainFont");
+  const secondaryColor = localStorage.getItem("secondaryColor");
+  const lineHeight = localStorage.getItem("lineHeight");
+  const primaryColor = localStorage.getItem("mainColor");
+  document.documentElement.style.setProperty("--color-white", primaryColor);
+  document.documentElement.style.setProperty("--color-black", secondaryColor);
+  document.documentElement.style.setProperty("--main-font", mainFont);
+  document.documentElement.style.setProperty("--line-height", lineHeight);
+}
 
 // Dack mode On/Of
 darkModeButton.addEventListener("click", toggleDarkMode);
@@ -10,7 +22,6 @@ function toggleDarkMode() {
   let primaryColor = getComputedStyle(
     document.documentElement
   ).getPropertyValue("--color-white");
-  console.log(primaryColor);
   if (primaryColor == "#ffff") {
     document.documentElement.style.setProperty(
       "--color-white",
@@ -39,17 +50,23 @@ const fonts = [
   "'DM Sans', sans-serif",
   "'Edu VIC WA NT Beginner', cursive",
   "'Poppins', sans-serif",
+  "'Dancing Script', cursive",
+  "'Edu TAS Beginner', cursive",
+  "'Edu VIC WA NT Beginner', cursive",
+  "'Josefin Sans', sans-serif",
+  "'Roboto', sans-serif",
 ];
+
 fontButton.addEventListener("click", handleFontChange);
 function handleFontChange() {
   document.documentElement.style.setProperty(
     "--main-font",
     fonts[Math.floor(Math.random() * fonts.length - 1)]
   );
+  console.log(Math.floor(Math.random() * fonts.length));
   const mainFont = getComputedStyle(document.documentElement).getPropertyValue(
     "--main-font"
   );
-  console.log(mainFont);
   localStorage.setItem("mainFont", mainFont);
 }
 
@@ -83,3 +100,7 @@ function upLineheightDown() {
   );
   localStorage.setItem("lineHeight", lineheightDown.toString());
 }
+
+window.onload = function () {
+  initialRenderization();
+};
