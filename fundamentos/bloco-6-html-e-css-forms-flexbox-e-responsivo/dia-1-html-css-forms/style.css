@@ -54,23 +54,19 @@ fieldset {
 
 #radio-options {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+}
+
+#radio-options input {
+  margin-inline: 1rem;
 }
 
 #motivos {
   padding: 1rem;
 }
 
-.one-line {
-  height: 2rem;
-  width: 20rem;
-  padding: 1rem;
-}
-
 button {
-  margin-top: 1rem;
+  margin-left: 1rem;
   width: 8rem;
-  height: 2rem;
   margin-right: 1rem;
 }

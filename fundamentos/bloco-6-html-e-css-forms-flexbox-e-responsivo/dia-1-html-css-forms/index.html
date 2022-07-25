@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
+    />
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>FormsHtml</title>
   </head>
@@ -14,25 +32,23 @@
       </div>
     </header>
     <main>
-      <form action="" method="get">
+      <form id="form" action="" method="get">
         <fieldset>
-          <label for="name">
+          <label class="form-label" for="name">
             Name
             <input
               placeholder="Insira seu nome completo"
-              minlength="10"
-              maxlength="40"
-              class="one-line"
+              class="form-control"
               name="name"
               type="text"
               id="name"
             />
           </label>
-          <label for="email">
+          <label class="form-label" for="email">
             Email
             <input
               type="text"
-              class="one-line"
+              class="form-control"
               name="email"
               placeholder="Insira seu email"
               id="email"
@@ -40,24 +56,37 @@
           </label>
           <p>Destino Preferido:</p>
           <div id="radio-options">
-            <label for="cidade">
-              <input type="radio" name="destino" id="cidade" />
-              Cidade
-            </label>
-            <label for="campo">
-              <input type="radio" name="destino" id="campo" />
-              Campo
-            </label>
-            <label for="praia">
-              <input type="radio" name="destino" id="praia" />
-              Praia
-            </label>
-            <label for="montanha">
-              <input type="radio" name="destino" id="montanha" />
-              Montanha
-            </label>
+            <input
+              type="radio"
+              class="form-check-input"
+              name="destino"
+              id="cidade"
+            />
+            <label class="form-check-label" for="cidade"> Cidade </label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="destino"
+              id="campo"
+            />
+            <label class="form-check-label" for="campo"> Campo </label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="destino"
+              id="praia"
+            />
+            <label class="form-check-label" for="praia"> Praia </label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="destino"
+              id="montanha"
+            />
+            <label for="montanha"> Montanha </label>
           </div>
           <textarea
+            class="form-control"
             name="motivos"
             id="motivos"
             maxlength="500"
@@ -65,25 +94,50 @@
             cols="30"
             rows="10"
           ></textarea>
-          <label for="data-viagem">
+          <label class="form-check-label" for="data-viagem">
             Qual a melhor data para realizar sua viagem? <br /><br />
-            <input type="date" name="data-viagem" id="data-viagem" />
           </label>
-          <label for="promocoes">
-            <input type="checkbox" name="promocoees" id="promocoes" />
-            Gostaria de receber outras incríveis oportunidades oferecidas pela
-            Trybe?
-          </label>
-          <label for="agree">
-            <input type="checkbox" name="agree" id="agree" />
-            Concordo que imagens das minhas férias poderão ser usadas na
-            divulgação de concursos futuros
-          </label>
+          <input name="data-viagem" id="datepicker" />
+          <div class="mb-3 form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="promocoees"
+              id="promocoes"
+            />
+            <label class="form-check-label" for="promocoes">
+              Gostaria de receber outras incríveis oportunidades oferecidas pela
+              Trybe?
+            </label>
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="agree"
+              id="agree"
+            />
+            <label class="form-check-label" for="agree">
+              Concordo que imagens das minhas férias poderão ser usadas na
+              divulgação de concursos futuros
+            </label>
+          </div>
         </fieldset>
-        <button type="submit" id="submit">Enviar</button>
-        <button type="reset" id="clear">Limpar</button>
+        <button class="btn btn-success" type="submit" id="submit">
+          Enviar
+        </button>
+        <button class="btn btn-danger" type="reset" id="clear">Limpar</button>
       </form>
     </main>
+    <script>
+      const validate = new window.JustValidate("#form");
+    </script>
+    <script src="pikaday.js"></script>
+    <script>
+      var picker = new Pikaday({
+        field: document.getElementById("datepicker"),
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
