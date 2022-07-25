@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#page-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 4rem;
+  align-items: center;
+  background-color: #0c99ba;
+}
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: rgb(31, 33, 48);
+}
+
+main {
+  width: 70%;
+  margin-inline: auto;
+}
+
+.logo span {
+  font-size: medium;
+  color: aliceblue;
+}
+
+fieldset {
+  margin-top: 5.2rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+#radio-options {
+  display: flex;
+  align-items: center;
+}
+
+#radio-options input {
+  margin-inline: 1rem;
+}
+
+#motivos {
+  padding: 1rem;
+}
+
+button {
+  margin-left: 1rem;
+  width: 8rem;
+  margin-right: 1rem;
+}
