@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.container {
+  width: 95%;
+}
+
+body {
+  display: flex;
+  width: 100;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+header p {
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+body p {
+  line-height: 1.2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .asides {
+    display: flex;
+    justify-content: center;
+  }
+
+  header p {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  article p {
+    font-size: 1.1rem;
+  }
+}
