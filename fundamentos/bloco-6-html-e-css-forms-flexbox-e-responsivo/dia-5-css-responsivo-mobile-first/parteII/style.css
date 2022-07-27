@@ -9,6 +9,7 @@ ul {
 *:after {
   box-sizing: inherit;
 }
+
 .container {
   width: 95%;
 }
@@ -45,6 +46,10 @@ h1 {
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
   .asides {
     display: flex;
     justify-content: center;
@@ -65,6 +70,10 @@ h1 {
 }
 
 @media screen and (min-width: 1028px) {
+  .container {
+    width: 85%;
+  }
+
   .aside-one,
   .aside-two {
     padding: 1rem;
