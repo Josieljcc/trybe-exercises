@@ -22,7 +22,9 @@ const addAtribute = (object, key, value) => (object[key] = value);
 
 addAtribute(lesson2, "turno", "noite");
 
-const allLessons = { lesson1, lesson2, lesson3 };
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
+
+console.log(allLessons);
 
 const listKeys = (object) => Object.keys(object);
 
