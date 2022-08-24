@@ -1,5 +1,5 @@
 // Verifique se a importação do arquivo correto está sendo feita.
-import { getPokemonDetails } from './exercicio-08';
+const getPokemonDetails = require('./exercicio-08');
 
 describe('A função getPokemonDetails', () => {
   it('retorna erro quando procuramos um pokémon que não existe no banco de dados', (done) => {
