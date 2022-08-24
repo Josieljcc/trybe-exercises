@@ -40,4 +40,4 @@ const handlePokemonSearch = (error, message) => {
 
 getPokemonDetails('Bulbasaur', handlePokemonSearch);
 
-export { getPokemonDetails };
+module.exports = getPokemonDetails;
