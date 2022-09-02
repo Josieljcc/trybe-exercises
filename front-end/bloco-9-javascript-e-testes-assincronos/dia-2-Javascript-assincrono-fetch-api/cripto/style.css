@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --font-family-primary: 'DM Sans', sans-serif;
+  --header-color: hsl(185, 28%, 43%);
+  --primary-color: hsl(156, 100%, 85%);
+  --secondary-color: hsl(156, 39%, 65%);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  background-color: var(--primary-color);
+}
+
+.container-flex {
+  display: flex;
+  margin: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--header-color);
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header .menu {
+  width: 70%;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .indice {
+  display: flex;
+}
+
+header .indice .indice-item {
+  margin-inline: 1rem;
+  margin-block: 0.87rem;
+}
+
+.menu nav a {
+  font-size: 1rem;
+  color: rgb(252, 249, 249);
+  transition: 0.23s;
+}
+
+.menu nav a:hover {
+  color: rgb(2, 0, 36);
+}
+
+.logo h1 {
+  color: #1f2e30;
+  transition: 0.3s;
+  font-size: 3.5rem;
+}
+
+.logo h1 strong {
+  color: rgb(252, 249, 249);
+  font-size: 1.8rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 20rem;
+  height: 15rem;
+  font-size: 1.3rem;
+}
+
+.card img {
+  height: 5rem;
+}
+
+.card-container {
+  width: 70%;
+  flex-wrap: wrap;
+  margin-top: 8rem;
+}
